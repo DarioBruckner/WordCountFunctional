@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WordCounter", "WordCounter\WordCounter.fsproj", "{CEF6AA0F-03DE-4DBC-8841-48284E78BE13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEF6AA0F-03DE-4DBC-8841-48284E78BE13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEF6AA0F-03DE-4DBC-8841-48284E78BE13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEF6AA0F-03DE-4DBC-8841-48284E78BE13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEF6AA0F-03DE-4DBC-8841-48284E78BE13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD383FCC-F289-495B-9DDC-A1A40C5E22DA}
+	EndGlobalSection
+EndGlobal
