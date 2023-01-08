@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WordCounter", "WordCounter\WordCounter.fsproj", "{CEF6AA0F-03DE-4DBC-8841-48284E78BE13}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "WordCounter", "WordCounter\WordCounter.fsproj", "{CEF6AA0F-03DE-4DBC-8841-48284E78BE13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{56F027A0-41A5-486F-8943-691427154FB5}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\PackMe.ps1 = .nuget\PackMe.ps1
+		.nuget\PowerPack.psm1 = .nuget\PowerPack.psm1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
