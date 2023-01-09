@@ -41,6 +41,7 @@ if arr <> null then
     let output =
         temp
         |> PSeq.countBy id
+        |> PSeq.sortBy fst
         |> Seq.sortByDescending snd
         |> PSeq.toList
 
