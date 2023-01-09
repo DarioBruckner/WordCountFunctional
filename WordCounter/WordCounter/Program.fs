@@ -3,6 +3,12 @@ open System.IO
 open FSharp.Collections.ParallelSeq
 
 
+
+
+
+
+
+
 let GetAllFiles(location : string, filetype : string) =
     try
         let ret = Directory.GetFiles(location, "*."+ filetype)
@@ -22,30 +28,32 @@ let AddallFilesToString (files : string[]) =
         listofStrings <- temp :: listofStrings
     let ret = String.concat " " listofStrings      
     (ret)
-printfn "Enter the target path"
-let userdirectory = System.Console.ReadLine();
-printfn "Enter the target fileextension"
-let filetype = System.Console.ReadLine();
 
-let temparr = string[]
+[<EntryPoint>]
+let main args =
+    let userdirectory = args[0]    
+    let filetype = args[1]
 
 
-let arr =  GetAllFiles (userdirectory, filetype)
+    let temparr = string[]
+    let arr =  GetAllFiles (userdirectory, filetype)
 
-if arr <> null then
+    if arr <> null then
     
-    let input = AddallFilesToString arr
+        let input = AddallFilesToString arr
 
-    let temp = count input
+        let temp = count input
 
-    let output =
-        temp
-        |> PSeq.countBy id
-        |> PSeq.sortBy fst
-        |> Seq.sortByDescending snd
-        |> PSeq.toList
+        let output =
+            temp
+            |> PSeq.countBy id
+            |> PSeq.sortBy fst
+            |> Seq.sortByDescending snd
+            |> PSeq.toList
 
-    for item in output do
-        printfn "%A %A" (snd item) (fst item)
+        for item in output do
+            printfn "%A %A" (snd item) (fst item)
+
+    0
 
         
