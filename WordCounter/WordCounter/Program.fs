@@ -3,7 +3,11 @@ open System.IO
 open FSharp.Collections.ParallelSeq
 
 let GetAllFiles (location : string) =
-    (Directory.GetFiles(location, "*.txt"))
+    try
+        let ret = Directory.GetFiles(location, "*.txt")
+        (ret)
+    with
+        | :? System.IO.DirectoryNotFoundException -> printf "Directory not found"; (null)
    
 let count (text : string) =
     let words = text.Split([|'.'; ' '; '\n'; '\r'; '*';'+';':'; '\"'; '('; ')';'['; ']'; '#'; ','; '-';';';'!';'?';':'; '\''; '\\'; '/'; '&'; '%'; '$'; '<';'>'; '`'; '^'; '@';'_';'='; '~';'{';'|';'}'|], StringSplitOptions.RemoveEmptyEntries) 
@@ -20,18 +24,20 @@ let AddallFilesToString (files : string[]) =
 
 let userdirectory = System.Console.ReadLine();
 
-let arr = GetAllFiles userdirectory
+let arr =  GetAllFiles userdirectory
 
-let input = AddallFilesToString arr
+if arr <> null then
+    
+    let input = AddallFilesToString arr
 
-let temp = count input
+    let temp = count input
 
-let output =
-    temp
-    |> PSeq.sort
-    |> PSeq.countBy id
-    |> Seq.sortByDescending snd
-    |> PSeq.toList
+    let output =
+        temp
+        |> PSeq.sort
+        |> PSeq.countBy id
+        |> Seq.sortByDescending snd
+        |> PSeq.toList
 
-for item in output do
-    printfn "%A %A" (snd item) (fst item)
+    for item in output do
+        printfn "%A %A" (snd item) (fst item)
