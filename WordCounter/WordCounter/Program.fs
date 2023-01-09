@@ -22,8 +22,9 @@ let AddallFilesToString (files : string[]) =
         listofStrings <- temp :: listofStrings
     let ret = String.concat " " listofStrings      
     (ret)
-
+printfn "Enter the target path"
 let userdirectory = System.Console.ReadLine();
+printfn "Enter the target fileextension"
 let filetype = System.Console.ReadLine();
 
 let temparr = string[]
@@ -39,7 +40,6 @@ if arr <> null then
 
     let output =
         temp
-        |> PSeq.sort
         |> PSeq.countBy id
         |> Seq.sortByDescending snd
         |> PSeq.toList
